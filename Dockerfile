@@ -66,5 +66,6 @@ RUN java -version
 
 # set the entrypoint to the start.sh script
 
-ENTRYPOINT ["startup.sh"]
+# ENTRYPOINT ["startup.sh"]
+ENTRYPOINT ["/usr/local/bin/startup.sh"]
 CMD ["startup.sh"]
