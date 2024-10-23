@@ -66,8 +66,7 @@ RUN java -version
  RUN wget https://jmeter-plugins.org/files/packages/jpgc-filterresults-2.2.zip && \
      unzip -o jpgc-filterresults-2.2.zip  && \ 
      mv jpgc-filterresults-2.2 /opt/jmeter && \
-     ln -s /opt/jmeter/bin/jpgc-filterresults /usr/bin/jmeter
- COPY filterresults.sh //home/runner/work/_temp/ 
+     ln -s /opt/jmeter/bin/jpgc-filterresults /usr/bin/jmeter 
  ENV PATH /opt/jmeter/bin:$PATH
 
  USER docker
