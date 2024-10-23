@@ -63,6 +63,13 @@ RUN java -version
 # #Verify JMeter installation
  RUN jmeter --version
 
+ # install filterresults plugins
+ RUN wget -q --no-check-certificate https://jmeter-plugins.org/files/packages/jpgc-filterresults-2.2.zip  -P . 
+ unzip -o jpgc-filterresults-2.2.zip  && rm jpgc-filterresults-2.2.zip
+ mv jpgc-filterresults-2.2 /opt/jpgc-filterresults
+ ln -s /opt/jpgc-filterresults/bin/jpgc-filterresults /usr/bin/jpgc-filterresults
+ ENV PATH /opt/jpgc-filterresults/bin:$PATH
+
  USER docker
 
 # set the entrypoint to the start.sh script
