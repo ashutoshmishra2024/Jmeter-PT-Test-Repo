@@ -63,9 +63,18 @@ RUN java -version
  RUN jmeter --version
 
  # install filterresults plugins
- RUN wget https://jmeter-plugins.org/files/packages/jpgc-filterresults-2.2.zip -P . && \
-    unzip -o jpgc-filterresults-2.2.zip && \
-     mv jpgc-filterresults-2.2 apache-jmeter-5.1.1/lib/ext
+ # RUN wget https://jmeter-plugins.org/files/packages/jpgc-filterresults-2.2.zip -P . && \
+ #   unzip -o jpgc-filterresults-2.2.zip && \
+ #    mv jpgc-filterresults-2.2 apache-jmeter-5.1.1/lib/ext
+
+RUN wget https://jmeter-plugins.org/files/packages/jpgc-cmd-2.0.zip && \
+    unzip jpgc-cmd-2.0.zip -d /opt/apache-jmeter-5.1.1 && \
+    rm jpgc-cmd-2.0.zip
+ 
+# Install filterresults plugin
+RUN wget https://jmeter-plugins.org/files/packages/jpgc-filterresults-2.2.zip && \
+    unzip jpgc-filterresults-2.2.zip -d /opt/apache-jmeter-5.1.1 && \
+    rm jpgc-filterresults-2.2.zip
 
  USER docker
 
