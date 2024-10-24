@@ -72,10 +72,12 @@ RUN wget https://jmeter-plugins.org/files/packages/jpgc-cmd-2.0.zip && \
     rm jpgc-cmd-2.0.zip
  
 # Install filterresults plugin
+cd /home/runner/work/pt-docker-script/pt-docker-script/apache-jmeter-5.6.3/bin && \
 RUN wget https://jmeter-plugins.org/files/packages/jpgc-filterresults-2.2.zip && \
-    unzip jpgc-filterresults-2.2.zip -d /opt/apache-jmeter-5.1.1 && \
-    rm jpgc-filterresults-2.2.zip
+    unzip jpgc-filterresults-2.2.zip && \
+    chmod 777 FilterResults.sh
 
+          
  USER docker
 
 # set the entrypoint to the start.sh script
