@@ -73,7 +73,8 @@ RUN wget https://jmeter-plugins.org/files/packages/jpgc-cmd-2.0.zip && \
  
 # Install filterresults plugin
 RUN wget https://jmeter-plugins.org/files/packages/jpgc-filterresults-2.2.zip && \
-    unzip jpgc-filterresults-2.2.zip -d /opt/apache-jmeter-5.1.1 && \
+    unzip jpgc-filterresults-2.2.zip && \
+    mv jpgc-filterresults-2.2.zip /home/runner/work/pt-docker-script/pt-docker-script/apache-jmeter-5.6.3/bin
     rm jpgc-filterresults-2.2.zip
 
           
